@@ -1,0 +1,290 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F60B83EF1BCAF34D00A2ADAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60B83EE1BCAF34D00A2ADAE /* AppDelegate.swift */; };
+		F60B83F11BCAF34D00A2ADAE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60B83F01BCAF34D00A2ADAE /* ViewController.swift */; };
+		F60B83F41BCAF34D00A2ADAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F60B83F21BCAF34D00A2ADAE /* Main.storyboard */; };
+		F60B83F61BCAF34D00A2ADAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F60B83F51BCAF34D00A2ADAE /* Assets.xcassets */; };
+		F60B83F91BCAF34D00A2ADAE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F60B83F71BCAF34D00A2ADAE /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F60B83EB1BCAF34D00A2ADAE /* Scoreboard Countdown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Scoreboard Countdown.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F60B83EE1BCAF34D00A2ADAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F60B83F01BCAF34D00A2ADAE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F60B83F31BCAF34D00A2ADAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F60B83F51BCAF34D00A2ADAE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F60B83F81BCAF34D00A2ADAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F60B83FA1BCAF34D00A2ADAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F60B83E81BCAF34D00A2ADAE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F60B83E21BCAF34D00A2ADAE = {
+			isa = PBXGroup;
+			children = (
+				F60B83ED1BCAF34D00A2ADAE /* Scoreboard Countdown */,
+				F60B83EC1BCAF34D00A2ADAE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F60B83EC1BCAF34D00A2ADAE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F60B83EB1BCAF34D00A2ADAE /* Scoreboard Countdown.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F60B83ED1BCAF34D00A2ADAE /* Scoreboard Countdown */ = {
+			isa = PBXGroup;
+			children = (
+				F60B83EE1BCAF34D00A2ADAE /* AppDelegate.swift */,
+				F60B83F01BCAF34D00A2ADAE /* ViewController.swift */,
+				F60B83F21BCAF34D00A2ADAE /* Main.storyboard */,
+				F60B83F51BCAF34D00A2ADAE /* Assets.xcassets */,
+				F60B83F71BCAF34D00A2ADAE /* LaunchScreen.storyboard */,
+				F60B83FA1BCAF34D00A2ADAE /* Info.plist */,
+			);
+			path = "Scoreboard Countdown";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F60B83EA1BCAF34D00A2ADAE /* Scoreboard Countdown */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F60B83FD1BCAF34D00A2ADAE /* Build configuration list for PBXNativeTarget "Scoreboard Countdown" */;
+			buildPhases = (
+				F60B83E71BCAF34D00A2ADAE /* Sources */,
+				F60B83E81BCAF34D00A2ADAE /* Frameworks */,
+				F60B83E91BCAF34D00A2ADAE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Scoreboard Countdown";
+			productName = "Scoreboard Countdown";
+			productReference = F60B83EB1BCAF34D00A2ADAE /* Scoreboard Countdown.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F60B83E31BCAF34D00A2ADAE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Tyler Behnken";
+				TargetAttributes = {
+					F60B83EA1BCAF34D00A2ADAE = {
+						CreatedOnToolsVersion = 7.0.1;
+					};
+				};
+			};
+			buildConfigurationList = F60B83E61BCAF34D00A2ADAE /* Build configuration list for PBXProject "Scoreboard Countdown" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F60B83E21BCAF34D00A2ADAE;
+			productRefGroup = F60B83EC1BCAF34D00A2ADAE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F60B83EA1BCAF34D00A2ADAE /* Scoreboard Countdown */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F60B83E91BCAF34D00A2ADAE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F60B83F91BCAF34D00A2ADAE /* LaunchScreen.storyboard in Resources */,
+				F60B83F61BCAF34D00A2ADAE /* Assets.xcassets in Resources */,
+				F60B83F41BCAF34D00A2ADAE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F60B83E71BCAF34D00A2ADAE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F60B83F11BCAF34D00A2ADAE /* ViewController.swift in Sources */,
+				F60B83EF1BCAF34D00A2ADAE /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F60B83F21BCAF34D00A2ADAE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F60B83F31BCAF34D00A2ADAE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F60B83F71BCAF34D00A2ADAE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F60B83F81BCAF34D00A2ADAE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F60B83FB1BCAF34D00A2ADAE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F60B83FC1BCAF34D00A2ADAE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F60B83FE1BCAF34D00A2ADAE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Scoreboard Countdown/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tylerbehnken.countdown.Scoreboard-Countdown";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F60B83FF1BCAF34D00A2ADAE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Scoreboard Countdown/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tylerbehnken.countdown.Scoreboard-Countdown";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F60B83E61BCAF34D00A2ADAE /* Build configuration list for PBXProject "Scoreboard Countdown" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F60B83FB1BCAF34D00A2ADAE /* Debug */,
+				F60B83FC1BCAF34D00A2ADAE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F60B83FD1BCAF34D00A2ADAE /* Build configuration list for PBXNativeTarget "Scoreboard Countdown" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F60B83FE1BCAF34D00A2ADAE /* Debug */,
+				F60B83FF1BCAF34D00A2ADAE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F60B83E31BCAF34D00A2ADAE /* Project object */;
+}
