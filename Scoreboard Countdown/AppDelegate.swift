@@ -16,7 +16,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        let appDefaults = NSDictionary(objects: ["Custom Stadium Name", "Custom Game Name"], forKeys: ["stadiumName", "gameName"]) as! [String : String]
+        defaults.registerDefaults(appDefaults)
+        defaults.synchronize()
+        
         return true
+        
     }
 
     func applicationWillResignActive(application: UIApplication) {

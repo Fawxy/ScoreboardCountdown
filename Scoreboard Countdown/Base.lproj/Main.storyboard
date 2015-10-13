@@ -1,13 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Freshman font.ttf">
+            <string>Freshman</string>
+            <string>Freshman</string>
+        </mutableArray>
+        <mutableArray key="scoreboard font.ttf">
+            <string>ScoreBoard</string>
+            <string>ScoreBoard</string>
+            <string>ScoreBoard</string>
+            <string>ScoreBoard</string>
+            <string>ScoreBoard</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Score Board View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ScoreBoardViewController" customModule="Scoreboard_Countdown" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +30,105 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Blank Board" translatesAutoresizingMaskIntoConstraints="NO" id="eCs-AG-wv6">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <animations/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Custom Stadium Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S6V-1B-Q6h">
+                                <rect key="frame" x="40" y="228" width="520" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Ide-Yh-HZD"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Freshman" family="Freshman" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Custom Game Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6X2-3t-2QU">
+                                <rect key="frame" x="30" y="264" width="540" height="33"/>
+                                <animations/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Freshman" family="Freshman" pointSize="32"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eKO-Gz-5PP">
+                                <rect key="frame" x="38" y="331" width="27" height="28"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="ScoreBoard" family="Score Board" pointSize="25"/>
+                                <color key="textColor" red="0.91764705879999997" green="0.37254901959999998" blue="0.035294117649999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="60" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="71M-3i-ADV">
+                                <rect key="frame" x="30" y="376" width="27" height="28"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="ScoreBoard" family="Score Board" pointSize="25"/>
+                                <color key="textColor" red="0.91764705879999997" green="0.37254901959999998" blue="0.035294117649999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="60" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MCb-ZA-Qvk">
+                                <rect key="frame" x="525" y="333" width="27" height="28"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="ScoreBoard" family="Score Board" pointSize="25"/>
+                                <color key="textColor" red="0.91764705879999997" green="0.37254901959999998" blue="0.035294117649999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="365" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NGC-3L-IEh">
+                                <rect key="frame" x="280" y="349" width="40" height="28"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="ScoreBoard" family="Score Board" pointSize="25"/>
+                                <color key="textColor" red="0.91764705879999997" green="0.37254901959999998" blue="0.035294117649999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="99/99/9999" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rGR-IY-zkE">
+                                <rect key="frame" x="240" y="314" width="121" height="25"/>
+                                <animations/>
+                                <color key="textColor" red="0.91764705879999997" green="0.37254901959999998" blue="0.035294117649999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="ScoreBoard" family="Score Board" pointSize="22"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="NGC-3L-IEh" secondAttribute="bottom" multiplier="1.59" id="0LL-Cq-5lh"/>
+                            <constraint firstItem="eCs-AG-wv6" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="2CM-zx-nIF"/>
+                            <constraint firstItem="S6V-1B-Q6h" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="40" id="41i-55-PXg"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="eKO-Gz-5PP" secondAttribute="bottom" multiplier="1.67" id="87z-NS-Ric"/>
+                            <constraint firstItem="NGC-3L-IEh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9RW-dV-qZf"/>
+                            <constraint firstItem="eCs-AG-wv6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Dqj-di-zpv"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="MCb-ZA-Qvk" secondAttribute="bottom" multiplier="1.66" id="My0-AW-V1n"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="6X2-3t-2QU" secondAttribute="bottom" multiplier="2.02" id="ZPB-5x-FAv"/>
+                            <constraint firstItem="eKO-Gz-5PP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" multiplier="1.9" id="b4s-KH-phM"/>
+                            <constraint firstItem="6X2-3t-2QU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="30" id="gKt-HQ-wu0"/>
+                            <constraint firstItem="eCs-AG-wv6" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="gxz-Ix-2tG"/>
+                            <constraint firstAttribute="trailing" secondItem="S6V-1B-Q6h" secondAttribute="trailing" constant="40" id="hDm-hj-flQ"/>
+                            <constraint firstAttribute="trailing" secondItem="6X2-3t-2QU" secondAttribute="trailing" constant="30" id="jId-J3-hp9"/>
+                            <constraint firstItem="eCs-AG-wv6" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="neO-Gh-VNV"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="S6V-1B-Q6h" secondAttribute="bottom" multiplier="2.33" id="qaR-Vc-ZqS"/>
+                            <constraint firstItem="71M-3i-ADV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" multiplier="1.5" id="sPo-s9-6pX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="MCb-ZA-Qvk" secondAttribute="trailing" multiplier="1.05" id="upv-wX-Lky"/>
+                            <constraint firstItem="rGR-IY-zkE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xeM-7H-XcE"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="rGR-IY-zkE" secondAttribute="bottom" multiplier="1.77" id="zOi-ib-iUR"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="71M-3i-ADV" secondAttribute="bottom" multiplier="1.485" id="zgY-Qv-hdI"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="dateField" destination="rGR-IY-zkE" id="CPK-bj-3uG"/>
+                        <outlet property="daysLabel" destination="NGC-3L-IEh" id="TfR-U3-dDI"/>
+                        <outlet property="gameName" destination="6X2-3t-2QU" id="c6a-8c-aYQ"/>
+                        <outlet property="hoursLabel" destination="eKO-Gz-5PP" id="fEv-Kt-Opq"/>
+                        <outlet property="minutesLabel" destination="MCb-ZA-Qvk" id="Caw-xj-RFf"/>
+                        <outlet property="secondsLabel" destination="71M-3i-ADV" id="mAA-Kx-xM6"/>
+                        <outlet property="stadiumName" destination="S6V-1B-Q6h" id="zI2-7k-Ebe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="468" y="436"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Blank Board" width="640" height="1136"/>
+    </resources>
 </document>

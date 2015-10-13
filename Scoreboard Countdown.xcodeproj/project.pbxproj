@@ -8,20 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		F60B83EF1BCAF34D00A2ADAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60B83EE1BCAF34D00A2ADAE /* AppDelegate.swift */; };
-		F60B83F11BCAF34D00A2ADAE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60B83F01BCAF34D00A2ADAE /* ViewController.swift */; };
+		F60B83F11BCAF34D00A2ADAE /* ScoreBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60B83F01BCAF34D00A2ADAE /* ScoreBoardViewController.swift */; };
 		F60B83F41BCAF34D00A2ADAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F60B83F21BCAF34D00A2ADAE /* Main.storyboard */; };
 		F60B83F61BCAF34D00A2ADAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F60B83F51BCAF34D00A2ADAE /* Assets.xcassets */; };
 		F60B83F91BCAF34D00A2ADAE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F60B83F71BCAF34D00A2ADAE /* LaunchScreen.storyboard */; };
+		F60B84031BCAF5FE00A2ADAE /* Freshman font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F60B84011BCAF5FE00A2ADAE /* Freshman font.ttf */; settings = {ASSET_TAGS = (); }; };
+		F60B84041BCAF5FE00A2ADAE /* scoreboard font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F60B84021BCAF5FE00A2ADAE /* scoreboard font.ttf */; settings = {ASSET_TAGS = (); }; };
+		F6AFB3801BCDBA4E00751ED7 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = F6AFB37F1BCDBA4E00751ED7 /* .gitignore */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F60B83EB1BCAF34D00A2ADAE /* Scoreboard Countdown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Scoreboard Countdown.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F60B83EE1BCAF34D00A2ADAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F60B83F01BCAF34D00A2ADAE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F60B83F01BCAF34D00A2ADAE /* ScoreBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreBoardViewController.swift; sourceTree = "<group>"; };
 		F60B83F31BCAF34D00A2ADAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F60B83F51BCAF34D00A2ADAE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F60B83F81BCAF34D00A2ADAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F60B83FA1BCAF34D00A2ADAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F60B84011BCAF5FE00A2ADAE /* Freshman font.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Freshman font.ttf"; sourceTree = "<group>"; };
+		F60B84021BCAF5FE00A2ADAE /* scoreboard font.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "scoreboard font.ttf"; sourceTree = "<group>"; };
+		F6AFB37F1BCDBA4E00751ED7 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +44,8 @@
 		F60B83E21BCAF34D00A2ADAE = {
 			isa = PBXGroup;
 			children = (
+				F6AFB37F1BCDBA4E00751ED7 /* .gitignore */,
+				F60B84001BCAF5EB00A2ADAE /* Fonts */,
 				F60B83ED1BCAF34D00A2ADAE /* Scoreboard Countdown */,
 				F60B83EC1BCAF34D00A2ADAE /* Products */,
 			);
@@ -55,13 +63,22 @@
 			isa = PBXGroup;
 			children = (
 				F60B83EE1BCAF34D00A2ADAE /* AppDelegate.swift */,
-				F60B83F01BCAF34D00A2ADAE /* ViewController.swift */,
+				F60B83F01BCAF34D00A2ADAE /* ScoreBoardViewController.swift */,
 				F60B83F21BCAF34D00A2ADAE /* Main.storyboard */,
 				F60B83F51BCAF34D00A2ADAE /* Assets.xcassets */,
 				F60B83F71BCAF34D00A2ADAE /* LaunchScreen.storyboard */,
 				F60B83FA1BCAF34D00A2ADAE /* Info.plist */,
 			);
 			path = "Scoreboard Countdown";
+			sourceTree = "<group>";
+		};
+		F60B84001BCAF5EB00A2ADAE /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F60B84011BCAF5FE00A2ADAE /* Freshman font.ttf */,
+				F60B84021BCAF5FE00A2ADAE /* scoreboard font.ttf */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -121,8 +138,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F60B84031BCAF5FE00A2ADAE /* Freshman font.ttf in Resources */,
 				F60B83F91BCAF34D00A2ADAE /* LaunchScreen.storyboard in Resources */,
+				F60B84041BCAF5FE00A2ADAE /* scoreboard font.ttf in Resources */,
 				F60B83F61BCAF34D00A2ADAE /* Assets.xcassets in Resources */,
+				F6AFB3801BCDBA4E00751ED7 /* .gitignore in Resources */,
 				F60B83F41BCAF34D00A2ADAE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -134,7 +154,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F60B83F11BCAF34D00A2ADAE /* ViewController.swift in Sources */,
+				F60B83F11BCAF34D00A2ADAE /* ScoreBoardViewController.swift in Sources */,
 				F60B83EF1BCAF34D00A2ADAE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,6 +303,7 @@
 				F60B83FF1BCAF34D00A2ADAE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
