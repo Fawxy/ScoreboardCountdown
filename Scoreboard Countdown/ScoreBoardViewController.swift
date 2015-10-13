@@ -9,6 +9,8 @@
 import UIKit
 
 class ScoreBoardViewController: UIViewController, UITextFieldDelegate {
+    
+    @IBOutlet var backgroundImage: UIImageView!
 
     @IBOutlet var stadiumName: UITextField!
     @IBOutlet var gameName: UITextField!
@@ -59,6 +61,14 @@ class ScoreBoardViewController: UIViewController, UITextFieldDelegate {
             datePickerView.addTarget(self, action: "handleDatePickerView:", forControlEvents: .ValueChanged)
             datePickerView.addTarget(self, action: "setTimer:", forControlEvents: .EditingDidEnd)
             textField.inputView = datePickerView
+            
+            let datePickerToolbar = UIToolbar()
+            datePickerToolbar.barStyle = .Default
+            datePickerToolbar.items = [UIBarButtonItem(title: "Cancel", style: .Plain, target: self, action: "cancelDateField"),
+                                       UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, target: nil, action: nil),
+                                       UIBarButtonItem(title: "Done", style: .Done, target: self, action: "finishDateField")]
+            datePickerToolbar.sizeToFit()
+            textField.inputAccessoryView = datePickerToolbar
         }
         
         return true
@@ -66,7 +76,6 @@ class ScoreBoardViewController: UIViewController, UITextFieldDelegate {
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.endEditing(true)
-//        self.resignFirstResponder()
         return false
     }
 
@@ -74,11 +83,13 @@ class ScoreBoardViewController: UIViewController, UITextFieldDelegate {
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "dd/MM/yyyy"
         dateField.text = dateFormatter.stringFromDate(sender.date)
-        let elapsedSeconds = sender.date.timeIntervalSinceDate(NSDate())
-        daysLabel.text = String((elapsedSeconds / 24) % 24)
-        //hoursLabel.text = String(elapsedSeconds / 3600)
-        //minutesLabel.text = String((elapsedSeconds / 60) % 60)
-        //secondsLabel.text = String(elapsedSeconds % 60)
+        
+        let calendar = NSCalendar.currentCalendar()
+        let components = calendar.components([.Day, .Hour, .Minute, .Second], fromDate: NSDate(), toDate: sender.date, options: [])
+        daysLabel.text = String(components.day)
+        hoursLabel.text = String(components.hour)
+        minutesLabel.text = String(components.minute)
+        secondsLabel.text = String(components.second)
     }
     
     func setTimer(sender: UIDatePicker) {
@@ -92,13 +103,27 @@ class ScoreBoardViewController: UIViewController, UITextFieldDelegate {
         if (targetDate?.earlierDate(now) == targetDate) {
             timer.invalidate()
         } else {
-            if let elapsedSeconds = targetDate?.timeIntervalSinceDate(now) {
-                daysLabel.text = String(elapsedSeconds % 24)
-                hoursLabel.text = String(elapsedSeconds / 3600)
-                minutesLabel.text = String((elapsedSeconds / 60) % 60)
-                secondsLabel.text = String(elapsedSeconds % 60)
-            }
+            let calendar = NSCalendar.currentCalendar()
+            let components = calendar.components([.Day, .Hour, .Minute, .Second], fromDate: now, toDate: targetDate!, options: [])
+            daysLabel.text = String(components.day)
+            hoursLabel.text = String(components.hour)
+            minutesLabel.text = String(components.minute)
+            secondsLabel.text = String(components.second)
         }
+    }
+    
+    func cancelDateField() {
+        if let target = targetDate {
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "dd/MM/yyyy"
+            dateField.text = dateFormatter.stringFromDate(target)
+        }
+        
+        dateField.resignFirstResponder()
+    }
+    
+    func finishDateField() {
+        dateField.endEditing(true)
     }
 }
 
