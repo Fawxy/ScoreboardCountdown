@@ -55,12 +55,15 @@ class ScoreBoardViewController: UIViewController, UITextFieldDelegate {
         onField.delegate = self
         quarterField.delegate = self
         
-        stadiumName.text = NSUserDefaults.standardUserDefaults().stringForKey("stadiumName")
+        let stadiumString = NSUserDefaults.standardUserDefaults().stringForKey("stadiumName")
+        stadiumName.attributedText = NSAttributedString(string: stadiumString!, attributes: [NSStrokeColorAttributeName: UIColor.blackColor(), NSStrokeWidthAttributeName: -3])
         gameName.text = NSUserDefaults.standardUserDefaults().stringForKey("gameName")
         tolLeft.text = NSUserDefaults.standardUserDefaults().stringForKey("tolLeft")
         tolRight.text = NSUserDefaults.standardUserDefaults().stringForKey("tolRight")
         onField.text = NSUserDefaults.standardUserDefaults().stringForKey("onField")
         quarterField.text = NSUserDefaults.standardUserDefaults().stringForKey("quarterField")
+        
+        
         
         self.canDisplayBannerAds = true
     }
@@ -75,6 +78,7 @@ class ScoreBoardViewController: UIViewController, UITextFieldDelegate {
         switch textField {
         case stadiumName:
             NSUserDefaults.standardUserDefaults().setObject(textField.text, forKey: "stadiumName")
+            textField.attributedText = NSAttributedString(string: textField.text!, attributes: [NSStrokeColorAttributeName: UIColor.blackColor(), NSStrokeWidthAttributeName: -3])
         case gameName:
             NSUserDefaults.standardUserDefaults().setObject(textField.text, forKey: "gameName")
         case tolLeft:
