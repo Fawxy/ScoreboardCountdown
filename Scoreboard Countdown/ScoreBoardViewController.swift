@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import iAd
 
 class ScoreBoardViewController: UIViewController, UITextFieldDelegate {
     
@@ -26,7 +27,6 @@ class ScoreBoardViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var secondsLabel: UILabel!
     
     var targetDate: NSDate?
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,6 +62,7 @@ class ScoreBoardViewController: UIViewController, UITextFieldDelegate {
         onField.text = NSUserDefaults.standardUserDefaults().stringForKey("onField")
         quarterField.text = NSUserDefaults.standardUserDefaults().stringForKey("quarterField")
         
+        self.canDisplayBannerAds = true
     }
 
     override func didReceiveMemoryWarning() {
