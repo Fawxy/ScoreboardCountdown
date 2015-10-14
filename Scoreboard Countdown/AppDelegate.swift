@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         let defaults = NSUserDefaults.standardUserDefaults()
-        let appDefaults = NSDictionary(objects: ["Custom Stadium Name", "Custom Game Name"], forKeys: ["stadiumName", "gameName"]) as! [String : String]
+        let appDefaults = NSDictionary(objects: ["Custom Stadium Name", "Custom Game Name", "3", "3", "TVR", "4"], forKeys: ["stadiumName", "gameName", "tolLeft", "tolRight", "onField", "quarterField"]) as! [String : String]
         defaults.registerDefaults(appDefaults)
         defaults.synchronize()
         

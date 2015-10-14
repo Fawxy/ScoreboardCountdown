@@ -15,6 +15,10 @@ class ScoreBoardViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var stadiumName: UITextField!
     @IBOutlet var gameName: UITextField!
     @IBOutlet var dateField: UITextField!
+    @IBOutlet var tolLeft: UITextField!
+    @IBOutlet var tolRight: UITextField!
+    @IBOutlet var onField: UITextField!
+    @IBOutlet var quarterField: UITextField!
     
     @IBOutlet var daysLabel: UILabel!
     @IBOutlet var hoursLabel: UILabel!
@@ -46,9 +50,17 @@ class ScoreBoardViewController: UIViewController, UITextFieldDelegate {
         stadiumName.delegate = self
         gameName.delegate = self
         dateField.delegate = self
+        tolLeft.delegate = self
+        tolRight.delegate = self
+        onField.delegate = self
+        quarterField.delegate = self
         
         stadiumName.text = NSUserDefaults.standardUserDefaults().stringForKey("stadiumName")
         gameName.text = NSUserDefaults.standardUserDefaults().stringForKey("gameName")
+        tolLeft.text = NSUserDefaults.standardUserDefaults().stringForKey("tolLeft")
+        tolRight.text = NSUserDefaults.standardUserDefaults().stringForKey("tolRight")
+        onField.text = NSUserDefaults.standardUserDefaults().stringForKey("onField")
+        quarterField.text = NSUserDefaults.standardUserDefaults().stringForKey("quarterField")
         
     }
 
@@ -64,6 +76,14 @@ class ScoreBoardViewController: UIViewController, UITextFieldDelegate {
             NSUserDefaults.standardUserDefaults().setObject(textField.text, forKey: "stadiumName")
         case gameName:
             NSUserDefaults.standardUserDefaults().setObject(textField.text, forKey: "gameName")
+        case tolLeft:
+            NSUserDefaults.standardUserDefaults().setObject(textField.text, forKey: "tolLeft")
+        case tolRight:
+            NSUserDefaults.standardUserDefaults().setObject(textField.text, forKey: "tolRight")
+        case onField:
+            NSUserDefaults.standardUserDefaults().setObject(textField.text, forKey: "onField")
+        case quarterField:
+            NSUserDefaults.standardUserDefaults().setObject(textField.text, forKey: "quarterField")
         default:
             break
         }
