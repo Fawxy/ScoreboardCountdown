@@ -22,6 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         defaults.registerDefaults(appDefaults)
         defaults.synchronize()
         
+        application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil))
+        
         return true
         
     }

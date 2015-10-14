@@ -81,8 +81,8 @@
                                 <color key="textColor" red="0.91764705879999997" green="0.37254901959999998" blue="0.035294117649999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="99/99/9999" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rGR-IY-zkE">
-                                <rect key="frame" x="240" y="314" width="121" height="25"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="rGR-IY-zkE">
+                                <rect key="frame" x="292" y="314" width="16" height="25"/>
                                 <animations/>
                                 <color key="textColor" red="0.91764705879999997" green="0.37254901959999998" blue="0.035294117649999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="ScoreBoard" family="Score Board" pointSize="22"/>

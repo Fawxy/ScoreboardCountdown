@@ -28,6 +28,20 @@ class ScoreBoardViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         targetDate = NSUserDefaults.standardUserDefaults().objectForKey("targetDate") as? NSDate
+        let now = NSDate()
+        if (!(targetDate?.earlierDate(now) == targetDate)) {
+            setTimer()
+            
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "dd/MM/yyyy"
+            dateField.text = dateFormatter.stringFromDate(targetDate!)
+        } else {
+            targetDate = nil
+            NSUserDefaults.standardUserDefaults().setObject(nil, forKey: "dateString")
+            NSUserDefaults.standardUserDefaults().setObject(nil, forKey: "targetDate")
+
+            dateField.text = "Tap Here"
+        }
         
         stadiumName.delegate = self
         gameName.delegate = self
@@ -35,6 +49,7 @@ class ScoreBoardViewController: UIViewController, UITextFieldDelegate {
         
         stadiumName.text = NSUserDefaults.standardUserDefaults().stringForKey("stadiumName")
         gameName.text = NSUserDefaults.standardUserDefaults().stringForKey("gameName")
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -58,8 +73,8 @@ class ScoreBoardViewController: UIViewController, UITextFieldDelegate {
         if textField == dateField {
             let datePickerView = UIDatePicker()
             datePickerView.datePickerMode = UIDatePickerMode.DateAndTime
+            datePickerView.minimumDate = NSDate().dateByAddingTimeInterval(60)
             datePickerView.addTarget(self, action: "handleDatePickerView:", forControlEvents: .ValueChanged)
-            datePickerView.addTarget(self, action: "setTimer:", forControlEvents: .EditingDidEnd)
             textField.inputView = datePickerView
             
             let datePickerToolbar = UIToolbar()
@@ -84,6 +99,8 @@ class ScoreBoardViewController: UIViewController, UITextFieldDelegate {
         dateFormatter.dateFormat = "dd/MM/yyyy"
         dateField.text = dateFormatter.stringFromDate(sender.date)
         
+        targetDate = sender.date
+        
         let calendar = NSCalendar.currentCalendar()
         let components = calendar.components([.Day, .Hour, .Minute, .Second], fromDate: NSDate(), toDate: sender.date, options: [])
         daysLabel.text = String(components.day)
@@ -92,16 +109,31 @@ class ScoreBoardViewController: UIViewController, UITextFieldDelegate {
         secondsLabel.text = String(components.second)
     }
     
-    func setTimer(sender: UIDatePicker) {
-        targetDate = sender.date
+    func setTimer() {
         NSUserDefaults.standardUserDefaults().setObject(targetDate, forKey: "targetDate")
+        print(dateField.text!)
+        NSUserDefaults.standardUserDefaults().setObject(dateField.text!, forKey: "dateString")
         NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "updateCounter:", userInfo: nil, repeats: true)
+        
+        // Cancel previously set notifications
+        UIApplication.sharedApplication().cancelAllLocalNotifications()
+        // create a corresponding local notification
+        let notification = UILocalNotification()
+        notification.alertBody = "Timer has finished!" // text that will be displayed in the notification
+        notification.alertAction = "open" // text that is displayed after "slide to..." on the lock screen - defaults to "slide to view"
+        notification.fireDate = targetDate // todo item due date (when notification will be fired)
+        notification.soundName = UILocalNotificationDefaultSoundName // play default sound
+        notification.category = "TODO_CATEGORY"
+        UIApplication.sharedApplication().scheduleLocalNotification(notification)
     }
     
     func updateCounter(timer: NSTimer) {
         let now = NSDate()
         if (targetDate?.earlierDate(now) == targetDate) {
             timer.invalidate()
+            dateField.text = "Finish!"
+            
+            showFinishAlert()
         } else {
             let calendar = NSCalendar.currentCalendar()
             let components = calendar.components([.Day, .Hour, .Minute, .Second], fromDate: now, toDate: targetDate!, options: [])
@@ -124,6 +156,16 @@ class ScoreBoardViewController: UIViewController, UITextFieldDelegate {
     
     func finishDateField() {
         dateField.endEditing(true)
+        dateField.resignFirstResponder()
+        
+        setTimer()
+    }
+    
+    func showFinishAlert() {
+        let alert = UIAlertController(title: "Finished!", message: "Your timer has finished!", preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "Finish", style: .Destructive, handler: nil))
+        
+        self.presentViewController(alert, animated: true, completion: nil)
     }
 }
 
