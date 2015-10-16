@@ -119,7 +119,7 @@ class ScoreBoardViewController: UIViewController, UITextFieldDelegate {
 
     func handleDatePickerView(sender: UIDatePicker) {
         let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "dd/MM/yyyy"
+        dateFormatter.dateFormat = "MM/dd/yyyy"
         dateField.text = dateFormatter.stringFromDate(sender.date)
         
         targetDate = sender.date
