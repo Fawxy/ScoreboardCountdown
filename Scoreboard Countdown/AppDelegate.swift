@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         let defaults = NSUserDefaults.standardUserDefaults()
-        let appDefaults = NSDictionary(objects: ["Custom Stadium Name", "Custom Game Name", "3", "3", "TVR", "4"], forKeys: ["stadiumName", "gameName", "tolLeft", "tolRight", "onField", "quarterField"]) as! [String : String]
+        let appDefaults = NSDictionary(objects: ["Custom Stadium Name", "Custom Game Name", "3", "3", "tvr", "4"], forKeys: ["stadiumName", "gameName", "tolLeft", "tolRight", "onField", "quarterField"]) as! [String : String]
         defaults.registerDefaults(appDefaults)
         defaults.synchronize()
         
@@ -49,7 +49,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
 }
 

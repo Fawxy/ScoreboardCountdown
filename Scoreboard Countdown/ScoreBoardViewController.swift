@@ -63,8 +63,6 @@ class ScoreBoardViewController: UIViewController, UITextFieldDelegate {
         onField.text = NSUserDefaults.standardUserDefaults().stringForKey("onField")
         quarterField.text = NSUserDefaults.standardUserDefaults().stringForKey("quarterField")
         
-        
-        
         self.canDisplayBannerAds = true
     }
 
