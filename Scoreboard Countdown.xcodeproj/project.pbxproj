@@ -14,9 +14,11 @@
 		F60B83F91BCAF34D00A2ADAE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F60B83F71BCAF34D00A2ADAE /* LaunchScreen.storyboard */; };
 		F60B84031BCAF5FE00A2ADAE /* Freshman font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F60B84011BCAF5FE00A2ADAE /* Freshman font.ttf */; settings = {ASSET_TAGS = (); }; };
 		F60B84041BCAF5FE00A2ADAE /* scoreboard font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F60B84021BCAF5FE00A2ADAE /* scoreboard font.ttf */; settings = {ASSET_TAGS = (); }; };
+		F611B7FC1BD17D6C0016780D /* CustomUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F611B7FB1BD17D6C0016780D /* CustomUITextField.swift */; settings = {ASSET_TAGS = (); }; };
 		F6A620911BCEF907005E031D /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6A6208F1BCEF907005E031D /* AdSupport.framework */; };
 		F6A620921BCEF907005E031D /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6A620901BCEF907005E031D /* iAd.framework */; };
 		F6AFB3801BCDBA4E00751ED7 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = F6AFB37F1BCDBA4E00751ED7 /* .gitignore */; settings = {ASSET_TAGS = (); }; };
+		F6C8286B1BD17355005106EE /* CustomUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C8286A1BD17355005106EE /* CustomUILabel.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,9 +31,11 @@
 		F60B83FA1BCAF34D00A2ADAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F60B84011BCAF5FE00A2ADAE /* Freshman font.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Freshman font.ttf"; sourceTree = "<group>"; };
 		F60B84021BCAF5FE00A2ADAE /* scoreboard font.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "scoreboard font.ttf"; sourceTree = "<group>"; };
+		F611B7FB1BD17D6C0016780D /* CustomUITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomUITextField.swift; sourceTree = "<group>"; };
 		F6A6208F1BCEF907005E031D /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		F6A620901BCEF907005E031D /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		F6AFB37F1BCDBA4E00751ED7 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		F6C8286A1BD17355005106EE /* CustomUILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomUILabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +80,8 @@
 				F60B83F51BCAF34D00A2ADAE /* Assets.xcassets */,
 				F60B83F71BCAF34D00A2ADAE /* LaunchScreen.storyboard */,
 				F60B83FA1BCAF34D00A2ADAE /* Info.plist */,
+				F6C8286A1BD17355005106EE /* CustomUILabel.swift */,
+				F611B7FB1BD17D6C0016780D /* CustomUITextField.swift */,
 			);
 			path = "Scoreboard Countdown";
 			sourceTree = "<group>";
@@ -162,7 +168,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F611B7FC1BD17D6C0016780D /* CustomUITextField.swift in Sources */,
 				F60B83F11BCAF34D00A2ADAE /* ScoreBoardViewController.swift in Sources */,
+				F6C8286B1BD17355005106EE /* CustomUILabel.swift in Sources */,
 				F60B83EF1BCAF34D00A2ADAE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

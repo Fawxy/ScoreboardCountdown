@@ -27,6 +27,7 @@ class ScoreBoardViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var secondsLabel: UILabel!
     
     var targetDate: NSDate?
+    var previousTargetDate: NSDate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,14 +38,14 @@ class ScoreBoardViewController: UIViewController, UITextFieldDelegate {
             setTimer()
             
             let dateFormatter = NSDateFormatter()
-            dateFormatter.dateFormat = "dd/MM/yyyy"
+            dateFormatter.dateFormat = "MM/dd/yyyy"
             dateField.text = dateFormatter.stringFromDate(targetDate!)
         } else {
             targetDate = nil
             NSUserDefaults.standardUserDefaults().setObject(nil, forKey: "dateString")
             NSUserDefaults.standardUserDefaults().setObject(nil, forKey: "targetDate")
 
-            dateField.text = "Tap Here"
+            dateField.text = "Tap Here!"
         }
         
         stadiumName.delegate = self
@@ -94,6 +95,7 @@ class ScoreBoardViewController: UIViewController, UITextFieldDelegate {
     
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
         if textField == dateField {
+            previousTargetDate = targetDate
             let datePickerView = UIDatePicker()
             datePickerView.datePickerMode = UIDatePickerMode.DateAndTime
             datePickerView.minimumDate = NSDate().dateByAddingTimeInterval(60)
@@ -134,7 +136,9 @@ class ScoreBoardViewController: UIViewController, UITextFieldDelegate {
     
     func setTimer() {
         NSUserDefaults.standardUserDefaults().setObject(targetDate, forKey: "targetDate")
-        print(dateField.text!)
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yyyy"
+        dateField.text = dateFormatter.stringFromDate(targetDate!)
         NSUserDefaults.standardUserDefaults().setObject(dateField.text!, forKey: "dateString")
         NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "updateCounter:", userInfo: nil, repeats: true)
         
@@ -168,10 +172,18 @@ class ScoreBoardViewController: UIViewController, UITextFieldDelegate {
     }
     
     func cancelDateField() {
+        targetDate = previousTargetDate
         if let target = targetDate {
             let dateFormatter = NSDateFormatter()
-            dateFormatter.dateFormat = "dd/MM/yyyy"
+            dateFormatter.dateFormat = "MM/dd/yyyy"
             dateField.text = dateFormatter.stringFromDate(target)
+        } else {
+            targetDate = nil
+            daysLabel.text = "365"
+            hoursLabel.text = "24"
+            minutesLabel.text = "60"
+            secondsLabel.text = "60"
+            dateField.text = "Tap Here!"
         }
         
         dateField.resignFirstResponder()
