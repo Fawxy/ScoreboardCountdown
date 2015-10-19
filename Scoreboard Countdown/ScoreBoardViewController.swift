@@ -99,6 +99,9 @@ class ScoreBoardViewController: UIViewController, UITextFieldDelegate {
             let datePickerView = UIDatePicker()
             datePickerView.datePickerMode = UIDatePickerMode.DateAndTime
             datePickerView.minimumDate = NSDate().dateByAddingTimeInterval(60)
+            if targetDate != nil {
+                datePickerView.date = targetDate!
+            }
             datePickerView.addTarget(self, action: "handleDatePickerView:", forControlEvents: .ValueChanged)
             textField.inputView = datePickerView
             
