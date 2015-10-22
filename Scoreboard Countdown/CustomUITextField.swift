@@ -10,9 +10,18 @@ import Foundation
 import UIKit
 
 class CustomUITextField : UITextField {
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        self.font = UIFont(name: "Score Board", size: self.font!.pointSize)
+        
+    private func shouldShrinkFont() -> Bool {
+        let size = UIScreen.mainScreen().bounds.size
+        return size.width + size.height == 480 + 320
     }
-}
+    
+    override var font: UIFont! {
+        didSet {
+            if shouldShrinkFont() {
+                super.font = UIFont(name: "Score Board", size: font.pointSize - 5)
+            } else {
+                super.font = UIFont(name: "Score Board", size: font.pointSize)
+            }
+        }
+    }}

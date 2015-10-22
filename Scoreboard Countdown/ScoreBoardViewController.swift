@@ -11,6 +11,8 @@ import iAd
 
 class ScoreBoardViewController: UIViewController, UITextFieldDelegate {
     
+    @IBOutlet weak var tapMeWidth: NSLayoutConstraint!
+    
     @IBOutlet var backgroundImage: UIImageView!
 
     @IBOutlet var stadiumName: UITextField!
@@ -46,6 +48,10 @@ class ScoreBoardViewController: UIViewController, UITextFieldDelegate {
             NSUserDefaults.standardUserDefaults().setObject(nil, forKey: "targetDate")
 
             dateField.text = "Tap Here!"
+        }
+        
+        if UIScreen.mainScreen().bounds.size.width + UIScreen.mainScreen().bounds.size.height == 480 + 320 {
+            tapMeWidth.constant = 215
         }
         
         stadiumName.delegate = self
