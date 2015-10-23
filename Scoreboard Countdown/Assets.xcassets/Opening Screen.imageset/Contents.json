@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Opening Screen.png",
+      "filename" : "Updated opening 640x1136.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Opening Screen@2x.png",
+      "filename" : "Updated opening 750x1334.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Opening Screen@3x.png",
+      "filename" : "Updated opening 1242x2208.png",
       "scale" : "3x"
     }
   ],
