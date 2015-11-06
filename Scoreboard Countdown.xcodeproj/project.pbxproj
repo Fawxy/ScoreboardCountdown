@@ -145,7 +145,7 @@
 				TargetAttributes = {
 					F60B83EA1BCAF34D00A2ADAE = {
 						CreatedOnToolsVersion = 7.0.1;
-						DevelopmentTeam = T2P7DE9XYN;
+						DevelopmentTeam = 6ERZKRV795;
 					};
 				};
 			};
@@ -309,7 +309,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tylerbehnken.countdowntimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d0b46514-4461-4e4f-8537-c48d9ce44f22";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -324,7 +324,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tylerbehnken.countdowntimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d0b46514-4461-4e4f-8537-c48d9ce44f22";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

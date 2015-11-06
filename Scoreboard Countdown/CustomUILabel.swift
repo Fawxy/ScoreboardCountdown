@@ -11,15 +11,20 @@ import UIKit
 
 class CustomUILabel : UILabel {
     
-    private func shouldShrinkFont() -> Bool {
-        let size = UIScreen.mainScreen().bounds.size
-        return size.width + size.height == 480 + 320
+    let size = UIScreen.mainScreen().bounds.size
+    
+    private func shouldChangeFont(screenSize: CGFloat) -> Bool {
+        return size.width + size.height == screenSize
     }
     
     override var font: UIFont! {
         didSet {
-            if shouldShrinkFont() {
+            if shouldChangeFont(480 + 320) {
                 super.font = UIFont(name: "Score Board", size: font.pointSize - 10)
+            } else if shouldChangeFont(667 + 375) {
+                super.font = UIFont(name: "Score Board", size: font.pointSize + 4)
+            } else if shouldChangeFont(736 + 414) {
+                super.font = UIFont(name: "Score Board", size: font.pointSize + 10)
             } else {
                 super.font = UIFont(name: "Score Board", size: font.pointSize)
             }

@@ -86,7 +86,9 @@ class ScoreBoardViewController: UIViewController, UITextFieldDelegate {
             dateField.text = "Tap Here!"
         }
         
-        if UIScreen.mainScreen().bounds.size.width + UIScreen.mainScreen().bounds.size.height == 480 + 320 {
+        let screenSize = UIScreen.mainScreen().bounds.size
+        
+        if screenSize.width + screenSize.height == 480 + 320 {
             tapMeWidth.constant = 215
         }
         
