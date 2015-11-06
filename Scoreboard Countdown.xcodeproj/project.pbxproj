@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		83D9A4361BED3BC100E0BEB6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D9A4351BED3BC100E0BEB6 /* Extensions.swift */; };
 		F60B83EF1BCAF34D00A2ADAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60B83EE1BCAF34D00A2ADAE /* AppDelegate.swift */; };
 		F60B83F11BCAF34D00A2ADAE /* ScoreBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60B83F01BCAF34D00A2ADAE /* ScoreBoardViewController.swift */; };
 		F60B83F41BCAF34D00A2ADAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F60B83F21BCAF34D00A2ADAE /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		83D9A4351BED3BC100E0BEB6 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		F60B83EB1BCAF34D00A2ADAE /* Scoreboard Countdown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Scoreboard Countdown.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F60B83EE1BCAF34D00A2ADAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F60B83F01BCAF34D00A2ADAE /* ScoreBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreBoardViewController.swift; sourceTree = "<group>"; };
@@ -51,6 +53,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		83D9A4331BED3B9400E0BEB6 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				83D9A4341BED3BA100E0BEB6 /* Extensions */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		83D9A4341BED3BA100E0BEB6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				83D9A4351BED3BC100E0BEB6 /* Extensions.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		F60B83E21BCAF34D00A2ADAE = {
 			isa = PBXGroup;
 			children = (
@@ -74,6 +92,7 @@
 		F60B83ED1BCAF34D00A2ADAE /* Scoreboard Countdown */ = {
 			isa = PBXGroup;
 			children = (
+				83D9A4331BED3B9400E0BEB6 /* Helpers */,
 				F60B83EE1BCAF34D00A2ADAE /* AppDelegate.swift */,
 				F60B83F01BCAF34D00A2ADAE /* ScoreBoardViewController.swift */,
 				F60B83F21BCAF34D00A2ADAE /* Main.storyboard */,
@@ -169,6 +188,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83D9A4361BED3BC100E0BEB6 /* Extensions.swift in Sources */,
 				F611B7FC1BD17D6C0016780D /* CustomUITextField.swift in Sources */,
 				F60B83F11BCAF34D00A2ADAE /* ScoreBoardViewController.swift in Sources */,
 				F6C8286B1BD17355005106EE /* CustomUILabel.swift in Sources */,

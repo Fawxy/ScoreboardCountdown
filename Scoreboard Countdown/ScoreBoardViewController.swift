@@ -12,7 +12,6 @@ import iAd
 class ScoreBoardViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var tapMeWidth: NSLayoutConstraint!
-    
     @IBOutlet var backgroundImage: UIImageView!
 
     @IBOutlet var stadiumName: UITextField! {
@@ -67,6 +66,9 @@ class ScoreBoardViewController: UIViewController, UITextFieldDelegate {
     var targetDate: NSDate?
     var previousTargetDate: NSDate?
     
+    /**
+     Here we set up the view if a previous timer has been set or reset everything if there is no target date/the timer has expired.
+     */
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -74,10 +76,8 @@ class ScoreBoardViewController: UIViewController, UITextFieldDelegate {
         targetDate = NSUserDefaults.standardUserDefaults().objectForKey("targetDate") as? NSDate
         if (!(targetDate?.earlierDate(NSDate()) == targetDate)) {
             setTimer()
-            
-            let dateFormatter = NSDateFormatter()
-            dateFormatter.dateFormat = "MM/dd/yyyy"
-            dateField.text = dateFormatter.stringFromDate(targetDate!)
+
+            dateField.text = targetDate!.parseDateShortFormat()
         } else {
             targetDate = nil
             NSUserDefaults.standardUserDefaults().setObject(nil, forKey: "dateString")
@@ -167,26 +167,31 @@ class ScoreBoardViewController: UIViewController, UITextFieldDelegate {
         return true
     }
 
+    /**
+     In this method we set the datefield to whatever date is on the picker each time it's changed. We also set the days etc.
+     
+     - parameter sender: The date picker that has had the date changed
+     */
     func handleDatePickerView(sender: UIDatePicker) {
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "MM/dd/yyyy"
-        dateField.text = dateFormatter.stringFromDate(sender.date)
-        
+    
+        dateField.text = sender.date.parseDateShortFormat()
         targetDate = sender.date
         
-        let calendar = NSCalendar.currentCalendar()
-        let components = calendar.components([.Day, .Hour, .Minute, .Second], fromDate: NSDate(), toDate: sender.date, options: [])
+        let components = sender.date.parseToCalendarComponents()
         daysLabel.text = String(components.day)
         hoursLabel.text = String(components.hour)
         minutesLabel.text = String(components.minute)
         secondsLabel.text = String(components.second)
     }
     
+    /**
+     In setTimer we start the timer based on the final date when the done button was pressed in the date picker. 
+     */
     func setTimer() {
+        
         NSUserDefaults.standardUserDefaults().setObject(targetDate, forKey: "targetDate")
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "MM/dd/yyyy"
-        dateField.text = dateFormatter.stringFromDate(targetDate!)
+        dateField.text = targetDate?.parseDateShortFormat()
+        
         NSUserDefaults.standardUserDefaults().setObject(dateField.text!, forKey: "dateString")
         NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "updateCounter:", userInfo: nil, repeats: true)
         
@@ -202,6 +207,11 @@ class ScoreBoardViewController: UIViewController, UITextFieldDelegate {
         UIApplication.sharedApplication().scheduleLocalNotification(notification)
     }
     
+    /**
+     This function is called each time the timer changes. It checks whether the timer has finished, in which case we invalidate it, or if it hasn't then it updates the UI to show new values
+     
+     - parameter timer: The timer that's updating
+     */
     func updateCounter(timer: NSTimer) {
         let now = NSDate()
         if (targetDate?.earlierDate(now) == targetDate) {
@@ -210,8 +220,7 @@ class ScoreBoardViewController: UIViewController, UITextFieldDelegate {
             
             showFinishAlert()
         } else {
-            let calendar = NSCalendar.currentCalendar()
-            let components = calendar.components([.Day, .Hour, .Minute, .Second], fromDate: now, toDate: targetDate!, options: [])
+            let components = targetDate!.parseToCalendarComponents()
             daysLabel.text = String(components.day)
             hoursLabel.text = String(components.hour)
             minutesLabel.text = String(components.minute)
@@ -219,12 +228,13 @@ class ScoreBoardViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    /**
+     This function handles what we should do when pressing the cancel button on the date field while a there is a previous target date or no date at all.
+     */
     func cancelDateField() {
         targetDate = previousTargetDate
         if let target = targetDate {
-            let dateFormatter = NSDateFormatter()
-            dateFormatter.dateFormat = "MM/dd/yyyy"
-            dateField.text = dateFormatter.stringFromDate(target)
+            dateField.text = target.parseDateShortFormat()
         } else {
             targetDate = nil
             daysLabel.text = "365"
@@ -237,6 +247,10 @@ class ScoreBoardViewController: UIViewController, UITextFieldDelegate {
         dateField.resignFirstResponder()
     }
     
+    
+    /**
+     This handles what happens when the done button on the toolbar for the date picker is pressed.
+     */
     func finishDateField() {
         dateField.endEditing(true)
         dateField.resignFirstResponder()
@@ -244,6 +258,9 @@ class ScoreBoardViewController: UIViewController, UITextFieldDelegate {
         setTimer()
     }
     
+    /**
+     An alert for the user letting them know the timer has finished.
+     */
     func showFinishAlert() {
         let alert = UIAlertController(title: "Finished!", message: "Your timer has finished!", preferredStyle: .Alert)
         alert.addAction(UIAlertAction(title: "Finish", style: .Destructive, handler: nil))
