@@ -15,13 +15,49 @@ class ScoreBoardViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var backgroundImage: UIImageView!
 
-    @IBOutlet var stadiumName: UITextField!
-    @IBOutlet var gameName: UITextField!
-    @IBOutlet var dateField: UITextField!
-    @IBOutlet var tolLeft: UITextField!
-    @IBOutlet var tolRight: UITextField!
-    @IBOutlet var onField: UITextField!
-    @IBOutlet var quarterField: UITextField!
+    @IBOutlet var stadiumName: UITextField! {
+        didSet {
+            stadiumName.delegate = self
+            let stadiumString = NSUserDefaults.standardUserDefaults().stringForKey("stadiumName")
+            stadiumName.attributedText = NSAttributedString(string: stadiumString!, attributes: [NSStrokeColorAttributeName: UIColor.blackColor(), NSStrokeWidthAttributeName: -3])
+        }
+    }
+    @IBOutlet var gameName: UITextField! {
+        didSet {
+            gameName.delegate = self
+            gameName.text = NSUserDefaults.standardUserDefaults().stringForKey("gameName")
+        }
+    }
+    @IBOutlet var dateField: UITextField! {
+        didSet {
+            dateField.delegate = self
+        }
+    }
+    @IBOutlet var tolLeft: UITextField! {
+        didSet {
+            tolLeft.delegate = self
+            tolLeft.text = NSUserDefaults.standardUserDefaults().stringForKey("tolLeft")
+        }
+    }
+    @IBOutlet var tolRight: UITextField! {
+        didSet {
+            tolRight.delegate = self
+            tolRight.text = NSUserDefaults.standardUserDefaults().stringForKey("tolRight")
+
+        }
+    }
+    @IBOutlet var onField: UITextField! {
+        didSet {
+            onField.delegate = self
+            onField.text = NSUserDefaults.standardUserDefaults().stringForKey("onField")
+        }
+    }
+    @IBOutlet var quarterField: UITextField! {
+        didSet {
+            quarterField.delegate = self
+            quarterField.text = NSUserDefaults.standardUserDefaults().stringForKey("quarterField")
+        }
+    }
     
     @IBOutlet var daysLabel: UILabel!
     @IBOutlet var hoursLabel: UILabel!
@@ -34,9 +70,9 @@ class ScoreBoardViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
         targetDate = NSUserDefaults.standardUserDefaults().objectForKey("targetDate") as? NSDate
-        let now = NSDate()
-        if (!(targetDate?.earlierDate(now) == targetDate)) {
+        if (!(targetDate?.earlierDate(NSDate()) == targetDate)) {
             setTimer()
             
             let dateFormatter = NSDateFormatter()
@@ -54,22 +90,6 @@ class ScoreBoardViewController: UIViewController, UITextFieldDelegate {
             tapMeWidth.constant = 215
         }
         
-        stadiumName.delegate = self
-        gameName.delegate = self
-        dateField.delegate = self
-        tolLeft.delegate = self
-        tolRight.delegate = self
-        onField.delegate = self
-        quarterField.delegate = self
-        
-        let stadiumString = NSUserDefaults.standardUserDefaults().stringForKey("stadiumName")
-        stadiumName.attributedText = NSAttributedString(string: stadiumString!, attributes: [NSStrokeColorAttributeName: UIColor.blackColor(), NSStrokeWidthAttributeName: -3])
-        gameName.text = NSUserDefaults.standardUserDefaults().stringForKey("gameName")
-        tolLeft.text = NSUserDefaults.standardUserDefaults().stringForKey("tolLeft")
-        tolRight.text = NSUserDefaults.standardUserDefaults().stringForKey("tolRight")
-        onField.text = NSUserDefaults.standardUserDefaults().stringForKey("onField")
-        quarterField.text = NSUserDefaults.standardUserDefaults().stringForKey("quarterField")
-        
         self.canDisplayBannerAds = true
     }
 
@@ -78,6 +98,11 @@ class ScoreBoardViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    /**
+     Here we ensure that when the user has made any changes they are stored right away
+     
+     - parameter textField: The text field that has had changes made to it
+     */
     func textFieldDidEndEditing(textField: UITextField) {
         
         switch textField {
@@ -99,6 +124,13 @@ class ScoreBoardViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    /**
+     This is where we set up the date picker for the date field so that the picker is displayed rather than a keyboard. We also set up the controls for changing the value of the date/time and the toolbar that allows us to dismiss the datepicker.
+     
+     - parameter textField: The text field the user has requested to edit
+     
+     - returns: Whether we should allow the user to begin editing or not. Always true.
+     */
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
         if textField == dateField {
             previousTargetDate = targetDate
@@ -123,9 +155,16 @@ class ScoreBoardViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
+    /**
+     This is where we enable the return key on the keyboard to dismiss the keyboard.
+     
+     - parameter textField: The text field that has had the return key pressed on it
+     
+     - returns: Always true as we don't need to override the default return behaviour
+     */
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.endEditing(true)
-        return false
+        return true
     }
 
     func handleDatePickerView(sender: UIDatePicker) {

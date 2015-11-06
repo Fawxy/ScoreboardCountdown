@@ -12,13 +12,13 @@
 		F60B83F41BCAF34D00A2ADAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F60B83F21BCAF34D00A2ADAE /* Main.storyboard */; };
 		F60B83F61BCAF34D00A2ADAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F60B83F51BCAF34D00A2ADAE /* Assets.xcassets */; };
 		F60B83F91BCAF34D00A2ADAE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F60B83F71BCAF34D00A2ADAE /* LaunchScreen.storyboard */; };
-		F60B84031BCAF5FE00A2ADAE /* Freshman font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F60B84011BCAF5FE00A2ADAE /* Freshman font.ttf */; settings = {ASSET_TAGS = (); }; };
-		F60B84041BCAF5FE00A2ADAE /* scoreboard font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F60B84021BCAF5FE00A2ADAE /* scoreboard font.ttf */; settings = {ASSET_TAGS = (); }; };
-		F611B7FC1BD17D6C0016780D /* CustomUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F611B7FB1BD17D6C0016780D /* CustomUITextField.swift */; settings = {ASSET_TAGS = (); }; };
+		F60B84031BCAF5FE00A2ADAE /* Freshman font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F60B84011BCAF5FE00A2ADAE /* Freshman font.ttf */; };
+		F60B84041BCAF5FE00A2ADAE /* scoreboard font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F60B84021BCAF5FE00A2ADAE /* scoreboard font.ttf */; };
+		F611B7FC1BD17D6C0016780D /* CustomUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F611B7FB1BD17D6C0016780D /* CustomUITextField.swift */; };
 		F6A620911BCEF907005E031D /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6A6208F1BCEF907005E031D /* AdSupport.framework */; };
 		F6A620921BCEF907005E031D /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6A620901BCEF907005E031D /* iAd.framework */; };
-		F6AFB3801BCDBA4E00751ED7 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = F6AFB37F1BCDBA4E00751ED7 /* .gitignore */; settings = {ASSET_TAGS = (); }; };
-		F6C8286B1BD17355005106EE /* CustomUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C8286A1BD17355005106EE /* CustomUILabel.swift */; settings = {ASSET_TAGS = (); }; };
+		F6AFB3801BCDBA4E00751ED7 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = F6AFB37F1BCDBA4E00751ED7 /* .gitignore */; };
+		F6C8286B1BD17355005106EE /* CustomUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C8286A1BD17355005106EE /* CustomUILabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -126,6 +126,7 @@
 				TargetAttributes = {
 					F60B83EA1BCAF34D00A2ADAE = {
 						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = T2P7DE9XYN;
 					};
 				};
 			};
@@ -282,11 +283,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Scoreboard Countdown/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.tylerbehnken.countdown.Scoreboard-Countdown";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tylerbehnken.countdowntimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "d0b46514-4461-4e4f-8537-c48d9ce44f22";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -295,11 +298,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Scoreboard Countdown/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.tylerbehnken.countdown.Scoreboard-Countdown";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tylerbehnken.countdowntimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "d0b46514-4461-4e4f-8537-c48d9ce44f22";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
